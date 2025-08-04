@@ -9,7 +9,7 @@ from typing import List
 
 app = FastAPI()
 
-# 添加 CORS   跨域中间件配置，允许所有来源跨域访问
+#  跨域中间件配置，允许所有来源跨域访问
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # 可根据需要指定允许的域名
