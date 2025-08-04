@@ -9,6 +9,8 @@ from typing import List
 
 app = FastAPI()
 
+
+
 #  跨域中间件配置，允许所有来源跨域访问
 app.add_middleware(
     CORSMiddleware,
