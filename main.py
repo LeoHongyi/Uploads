@@ -1,10 +1,20 @@
 from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.responses import JSONResponse, FileResponse
+from fastapi.middleware.cors import CORSMiddleware
 import os
 from typing import List
 
 # 创建 FastAPI 应用
 app = FastAPI()
+
+# 添加 CORS 跨域中间件配置，允许所有来源跨域访问
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 可根据需要指定允许的域名
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # 上传文件存储目录
 UPLOAD_FOLDER = "./software_uploads"
